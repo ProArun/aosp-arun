@@ -1,0 +1,7 @@
+prebuilt_etc_xml {
+    // CHANGE THIS NAME to be unique
+    name: "arvind_framework_matrix", 
+    src: "framework_compatibility_matrix.xml",
+    system_ext_specific: true,
+    relative_install_path: "vintf/compatibility_matrix",
+}

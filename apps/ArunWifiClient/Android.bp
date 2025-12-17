@@ -1,0 +1,19 @@
+android_app {
+    name: "ArunWifiClient",
+    srcs: ["src/**/*.kt"],
+    resource_dirs: ["res"],
+    certificate: "platform",
+    system_ext_specific: true,
+    platform_apis: true,
+    kotlincflags: ["-Werror"],
+    static_libs: [
+        "com.arun.common.wifi", // Link the AIDL
+        "androidx.core_core-ktx",
+        "androidx.activity_activity-compose",
+        "androidx.compose.runtime_runtime",
+        "androidx.compose.ui_ui",
+        "androidx.compose.foundation_foundation",
+        "androidx.compose.foundation_foundation-layout",
+        "androidx.compose.material3_material3",
+    ],
+}

@@ -1,0 +1,20 @@
+android_app {
+    name: "ArunBatteryClient",
+    srcs: ["src/**/*.kt"],
+    resource_dirs: ["res"],
+    certificate: "platform",
+    system_ext_specific: true,
+    platform_apis: true,
+    static_libs: [
+        "ArunBatteryManager", // Use our Manager SDK
+        "androidx.core_core-ktx",
+        "androidx.activity_activity-compose",
+       
+       // MISSING DEPENDENCIES CAUSING THE CRASH:
+        "androidx.compose.runtime_runtime",       // Contains 'remember'
+        "androidx.compose.ui_ui",                 // Contains 'Modifier'
+        "androidx.compose.foundation_foundation", 
+        "androidx.compose.foundation_foundation-layout", // Contains 'Column'
+        "androidx.compose.material3_material3",
+    ],
+}

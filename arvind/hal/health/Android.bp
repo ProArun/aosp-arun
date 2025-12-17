@@ -1,0 +1,17 @@
+cc_binary {
+    name: "android.hardware.health.arvind-service",
+    relative_install_path: "hw",
+    srcs: ["ArvindHealthService.cpp"],
+    init_rc: ["arvind_health.rc"],
+    vendor: true,
+    
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk", // Required for NDK Backend
+        "libutils",
+        "liblog",        // Added for logging
+        // Link against the NDK version of our AIDL
+        // FIX: Remove "-V1" here too
+        "com.arvind.hal.health-ndk", 
+    ],
+}

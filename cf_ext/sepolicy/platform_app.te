@@ -1,0 +1,24 @@
+#Its not working so disabled SElinux
+#run adb shell setenforce 0 every time you reboot.
+
+# ==============================================
+# Arun Battery Service Policy (Tested for Android 15)
+# ==============================================
+
+# 1. ALLOW FINDING: Let the app verify the service exists
+allow platform_app hal_health_service:service_manager find;
+
+# 2. ALLOW BINDER CALLS: Let the app talk to the HAL server
+binder_call(platform_app, hal_health_server)
+binder_call(hal_health_server, platform_app)
+
+# 3. ALLOW TRANSFER: Critical for AIDL interfaces!
+# This allows the HAL to send the "IHealth" interface object back to your app.
+allow platform_app hal_health_server:binder { transfer call };
+allow hal_health_server platform_app:binder { transfer call };
+
+# 4. ALLOW FILE MAPPING: Often needed for shared memory transfer in AIDL
+allow platform_app hal_health_server:fd use;
+
+# 5. DEBUGGING: Allow listing services (optional but helpful)
+allow platform_app servicemanager:service_manager list;

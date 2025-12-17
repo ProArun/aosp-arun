@@ -1,0 +1,8 @@
+cc_binary {
+    name: "usb-can",
+    srcs: [
+        "canusb.c",
+    ],
+    // FIX: Install to /product/bin/ instead
+    product_specific: true,
+}

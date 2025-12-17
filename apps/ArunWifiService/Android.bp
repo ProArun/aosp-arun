@@ -1,0 +1,9 @@
+android_app {
+    name: "ArunWifiService",
+    srcs: ["src/**/*.kt"],
+    certificate: "platform", // Critical: Gives us permission to toggle Wifi
+    privileged: true,
+    system_ext_specific: true,
+    platform_apis: true,
+    static_libs: ["com.arun.common.wifi"], // Link our AIDL
+}

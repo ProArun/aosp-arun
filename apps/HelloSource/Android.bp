@@ -1,0 +1,32 @@
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+android_app {
+    name: "HelloSource",
+
+    // 1. Point to your source code
+    srcs: ["src/**/*.kt"],
+    resource_dirs: ["res"],
+
+    // 2. Platform Certificate (Gives system privileges)
+    certificate: "platform",
+
+    // 3. Install path: /product/app/HelloSource
+    //product_specific: true,
+    
+    //Move from product to system_ext to allow platform_apis
+    system_ext_specific: true,
+
+
+    // 4. Use current Android APIs (or set specific SDK version)
+    platform_apis: true,
+
+    // 5. Enable Kotlin Support
+    kotlincflags: ["-Werror"],
+
+    // 6. Include standard Android libraries
+    static_libs: [
+        "androidx.core_core",
+    ],
+}

@@ -1,0 +1,12 @@
+java_library {
+    name: "com.arun.common.wifi",
+    // 1. Point to the file
+    srcs: ["src/**/*.aidl"],
+    
+    // 2. IMPORTANT: Tell AIDL that "src" is the root folder for packages
+    aidl: {
+        local_include_dirs: ["src"],
+    },
+    
+    sdk_version: "current",
+}

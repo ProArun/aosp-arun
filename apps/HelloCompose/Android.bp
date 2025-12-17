@@ -1,0 +1,15 @@
+android_app_import {
+    name: "HelloCompose",
+    apk: "HelloCompose.apk",
+    
+    // Retain the signature from Android Studio (debug key)
+    //presigned: true,
+    
+    // Optimizations: Skip dex pre-opt if you want faster iteration during dev
+    dex_preopt: {
+        enabled: false,
+    },
+    certificate: "platform",
+    // Partition: Install to /product/app/HelloCompose
+    product_specific: true,
+}

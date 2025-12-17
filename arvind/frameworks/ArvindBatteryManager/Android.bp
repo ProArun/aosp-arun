@@ -1,0 +1,6 @@
+java_library {
+    name: "ArvindBatteryManager",
+    srcs: ["src/**/*.kt"],
+    static_libs: ["com.arvind.battery.lib"],
+    sdk_version: "current",
+}

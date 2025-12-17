@@ -1,0 +1,6 @@
+java_library {
+    name: "ArunBatteryManager",
+    srcs: ["src/**/*.kt"],
+    static_libs: ["com.arun.battery.lib"],
+    sdk_version: "current",
+}

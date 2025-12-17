@@ -1,0 +1,16 @@
+android_app {
+    name: "ArunBatteryService",
+    srcs: ["src/**/*.kt"],
+    resource_dirs: [],
+    
+    certificate: "platform",
+    privileged: true,
+    system_ext_specific: true,
+    platform_apis: true,
+    
+    // FIX: All Java dependencies must be in static_libs
+    static_libs: [
+        "com.arun.battery.lib",
+        "android.hardware.health-V3-java",
+    ],
+}

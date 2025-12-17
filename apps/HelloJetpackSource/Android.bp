@@ -1,0 +1,30 @@
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+android_app {
+    name: "HelloJetpackSource",
+
+    // 1. Source files
+    srcs: ["src/**/*.kt"],
+    resource_dirs: ["res"],
+
+    // 2. System App Configuration
+    certificate: "platform",
+    system_ext_specific: true,
+    platform_apis: true,
+
+    // 3. Kotlin & Compose Setup
+    kotlincflags: ["-Werror"],
+
+    // 4. Critical: Dependencies
+    static_libs: [
+        "androidx.core_core-ktx",
+        "androidx.activity_activity-compose",
+        "androidx.compose.runtime_runtime",
+        "androidx.compose.ui_ui",
+        "androidx.compose.foundation_foundation",
+        "androidx.compose.foundation_foundation-layout",
+        "androidx.compose.material3_material3",
+    ],
+}

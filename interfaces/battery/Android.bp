@@ -1,0 +1,8 @@
+java_library {
+    name: "com.arun.battery.lib", // We will link this in both Client and Service
+    srcs: ["src/**/*.aidl"],
+    sdk_version: "current",
+    aidl: {
+        local_include_dirs: ["src"],
+    },
+}

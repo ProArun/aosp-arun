@@ -1,0 +1,17 @@
+aidl_interface {
+    name: "com.arvind.hal.health",
+    srcs: ["aidl/**/*.aidl"],
+    local_include_dir: "aidl",
+    owner: "arvind",
+    unstable: true,
+    // FIX: This line generates the 'image:vendor' variant needed by your C++ HAL
+    vendor_available: true,
+    backend: {
+        // IMPORTANT: Enable NDK for the C++ Service
+        ndk: { enabled: true },
+        // Enable Java for the System Service
+        java: { enabled: true },
+        // Disable the legacy CPP backend to avoid confusion
+        cpp: { enabled: false },
+    },
+}

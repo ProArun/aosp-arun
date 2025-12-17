@@ -1,0 +1,16 @@
+android_app {
+    name: "ArvindBatteryService",
+    srcs: ["src/**/*.kt"],
+    resource_dirs: [], // Add this to prevent 'res does not exist' error
+    certificate: "platform",
+    privileged: true,
+    system_ext_specific: true,
+    platform_apis: true,
+    
+    static_libs: [
+        "com.arvind.battery.lib",
+        // Link against the Java version of the HAL AIDL
+        // FIX: Remove "-V1" because the interface is unstable
+        "com.arvind.hal.health-java", 
+    ],
+}
