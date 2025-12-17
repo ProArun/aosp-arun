@@ -44,3 +44,10 @@ To check health sevice i think please verify
 
 to become root user
 adb root
+
+Remove this line from this from: /home/arun/aosp/device/google/cuttlefish/shared/sepolicy/vendor/file_contexts
+
+Other than everything is in arun 
+
+# Arvind HAL
+/vendor/bin/hw/android\.hardware\.health\.arvind-service   u:object_r:hal_health_default_exec:s0
